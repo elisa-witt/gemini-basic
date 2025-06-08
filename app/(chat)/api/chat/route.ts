@@ -22,6 +22,7 @@ export async function POST(request: Request) {
     model: geminiProModel,
     messages: coreMessages,
     temperature: 1,
+    maxTokens: 200000,
     onFinish: async ({ response }) => {
       if (session.user && session.user.id) {
         try {
