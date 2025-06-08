@@ -4,6 +4,8 @@ import { wrapLanguageModel } from "ai";
 import { customMiddleware } from "./custom-middleware";
 
 export const geminiProModel = wrapLanguageModel({
-  model: google("gemini-2.5-pro-preview-05-06"),
+  model: google("gemini-2.5-pro-preview-05-06", {
+    useSearchGrounding: true,
+  }),
   middleware: customMiddleware,
 });
